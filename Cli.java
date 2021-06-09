@@ -52,6 +52,10 @@ public class Cli {
     }
 
     private static int max(int[] intArray) {
+        if (intArray.length == 1) {
+            return intArray[0];
+        }
+        else {
         int max = Integer.MIN_VALUE;
         for(int i = 1; i < intArray.length; i++) {
             if(intArray[i] > max) {                     // Determine new max value
@@ -59,9 +63,14 @@ public class Cli {
             }
         }
         return max;
+        }
     }
     
     private static int min(int[] intArray) {
+        if (intArray.length == 1) {
+            return intArray[0];
+        }
+        else {
         int min = Integer.MAX_VALUE;
         for(int i = 1; i < intArray.length; i++) {
             if(intArray[i] < min) {                     // Determine new min value
@@ -69,6 +78,7 @@ public class Cli {
             }   
         }
         return min;
+        }
     }
 
     public static void main(String [] args) {

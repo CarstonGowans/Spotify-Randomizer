@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Cli {
-    private static Scanner myScanner = new Scanner(System.in);
+    private static Scanner myScanner = new Scanner(System.in);      // Scanner For Input            
 
-    private static String getUserInput() {
+    private static String getUserInput() {                          // Function for gathering User Input
         System.out.print("> ");
         return myScanner.nextLine();
     }
 
-    private static int[] stringArrayToIntArray(String[] strings) {
-        int[] integers = new int[strings.length];
+    private static int[] stringArrayToIntArray(String[] strings) {  // Function for converting String Input to Int array
+        int[] integers = new int[strings.length];               
 
             for(int i = 0; i < strings.length; i++) {
                 try {
@@ -22,28 +22,28 @@ public class Cli {
         return integers;
     }
 
-    private static int sum(int[] intArray) {
+    private static int sum(int[] intArray) {                    // Function for calculating sum
         int sum = 0;
-        for(int i = 0; i < intArray.length; i++) {            // Read in Ints and pasrse for information: If the first number in the input doesn't matter, change back to int i = 0...
+        for(int i = 0; i < intArray.length; i++) {              // Read in Ints and pasrse for information: If the first number in the input doesn't matter, change back to int i = 0...
             sum += intArray[i];   
         }
         return sum;
     }
 
-    private static ArrayList<Integer> evens(int[] intArray) {
+    private static ArrayList<Integer> evens(int[] intArray) {   // Function for calculating even values
         ArrayList<Integer> evens = new ArrayList<Integer>();
         for(int i = 0; i < intArray.length; i++) {
-            if(intArray[i] % 2 == 0) {                  // Determine if int is even or odd 
+            if(intArray[i] % 2 == 0) {                          // Determine if int is even using Modulo Division
                 evens.add(intArray[i]);                
             }
         }
         return evens;
     }
 
-    private static ArrayList<Integer> odds(int[] intArray) {
+    private static ArrayList<Integer> odds(int[] intArray) {    // Function for determining odd values
         ArrayList<Integer> odds = new ArrayList<Integer>();
         for(int i = 1; i < intArray.length; i++) {
-            if(intArray[i] % 2 != 0) {                  // Determine if int is even or odd 
+            if(intArray[i] % 2 != 0) {                          // Determine if int is odd using Modulo Division
                 odds.add(intArray[i]);                
             }
             else {}
@@ -51,14 +51,14 @@ public class Cli {
         return odds;
     }
 
-    private static int max(int[] intArray) {
-        if (intArray.length == 1) {
+    private static int max(int[] intArray) {                    // Function for calculating new max value
+        if (intArray.length == 1) {                             // Return first number if size is 1
             return intArray[0];
         }
         else {
         int max = Integer.MIN_VALUE;
-        for(int i = 1; i < intArray.length; i++) {
-            if(intArray[i] > max) {                     // Determine new max value
+        for(int i = 1; i < intArray.length; i++) {              // Else, parse through the array to determine the max value
+            if(intArray[i] > max) {                             
                 max = intArray[i];
             }
         }
@@ -66,14 +66,14 @@ public class Cli {
         }
     }
     
-    private static int min(int[] intArray) {
-        if (intArray.length == 1) {
-            return intArray[0];
+    private static int min(int[] intArray) {                    // Function for calculating new min min value
+        if (intArray.length == 1) {                             // Return first number if size is 1
+            return intArray[0];                 
         }
         else {
         int min = Integer.MAX_VALUE;
-        for(int i = 1; i < intArray.length; i++) {
-            if(intArray[i] < min) {                     // Determine new min value
+        for(int i = 1; i < intArray.length; i++) {              // Else, parse through the array to determine the min value
+            if(intArray[i] < min) {                    
                 min = intArray[i];
             }   
         }
@@ -81,23 +81,24 @@ public class Cli {
         }
     }
 
-    public static void main(String [] args) {
+    public static void main(String [] args) {                                   // Main Driver code for Cli
         //Cli cli = new Cli();
         System.out.println("Enter list of Integers. (space separated): ");
-        int [] ints = Cli.stringArrayToIntArray(getUserInput().split("\\s+"));
+        int [] ints = Cli.stringArrayToIntArray(getUserInput().split("\\s+"));  // Input Information into Array from stringToIntArray() function
        
         int operation = 0;
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose an Operation\n1. Sum - sum the integers\n2. Evens - find the evens\n3. Odds - find the odds\n4. Max - find the max\n5. Min - find the min\n6. Update - enter a new list of integers\n7. Exit");
-        while(operation != 7) {
+        
+        while(operation != 7) {                                                 // While loop to loop through commands
             operation = scan.nextInt();
             switch(operation) {
-                case 1: {
+                case 1: {                                                       // Output for Sum
                     int sum = Cli.sum(ints);
                     System.out.println("Sum - " + sum);
                     break;
                 }
-                case 2: {
+                case 2: {                                                       // Output for Evens
                     ArrayList<Integer> evens = Cli.evens(ints);
                     System.out.print("Even: ");
                     for(int i = 0; i < evens.size(); i++) {
@@ -110,7 +111,7 @@ public class Cli {
                     }
                     break;
                 }
-                case 3: {
+                case 3: {                                                       // Output for Odds                          
                     ArrayList<Integer> odds = Cli.odds(ints);
                     System.out.print("Odds: ");
                     for(int i = 0; i < odds.size(); i++) {
@@ -123,23 +124,23 @@ public class Cli {
                     }
                     break;
                 }
-                case 4: {
+                case 4: {                                                       // Output for Max Value
                     int max = Cli.max(ints);
-                    System.out.println("Max: " + max);              // Print Max
+                    System.out.println("Max: " + max);
                     break;
                 }
                 case 5: {
-                    int min = Cli.min(ints);
-                    System.out.println("Min: " + min);              // Print Min
+                    int min = Cli.min(ints);                                    // Output for Min Value
+                    System.out.println("Min: " + min);
                     break;
                 }
-                case 6: {
+                case 6: {                                                       // Funciton call for inserting new Ints
                     System.out.println("Enter list of Integers. (space separated): ");
                     ints = Cli.stringArrayToIntArray(getUserInput().split("\\s+"));
                     System.out.println("Choose an Operation\n1. Sum - sum the integers\n2. Evens - find the evens\n3. Odds - find the odds\n4. Max - find the max\n5. Min - find the min\n6. Update - enter a new list of integers\n7. Exit");
                     break;
                 }
-                case 7:
+                case 7:                                                         // Function call to break out of loop
                     operation = 7;
                     break;
             }

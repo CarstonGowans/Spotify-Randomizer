@@ -2,9 +2,9 @@
 
         import java.util.ArrayList;
         import java.util.Scanner;
-        
+
         class Cli {
-        public static void main(String [] args) {                                   // Main Driver code for Cli
+        public static void main(String [] args) {                                                                    // Main Driver code for Cli
         //Cli cli = new Cli();
         System.out.println("Enter list of Integers. (space separated): ");
         int [] ints = MathCalculations.stringArrayToIntArray(MathCalculations.getUserInput().split("\\s+"));  // Input Information into Array from stringToIntArray() function
@@ -34,7 +34,7 @@
                     }
                     break;
                 }
-                case 3: {                                                       // Output for Odds                          
+                case 3: {                                                       // Output for Odds
                     ArrayList<Integer> odds = MathCalculations.odds(ints);
                     System.out.print("Odds: ");
                     for(int i = 0; i < odds.size(); i++) {
@@ -53,11 +53,11 @@
                     break;
                 }
                 case 5: {
-                    int min = MathCalculations.min(ints);                                    // Output for Min Value
+                    int min = MathCalculations.min(ints);                       // Output for Min Value
                     System.out.println("Min: " + min);
                     break;
                 }
-                case 6: {                                                       // Funciton call for inserting new Ints
+                case 6: {                                                       // Function call for inserting new Ints
                     System.out.println("Enter list of Integers. (space separated): ");
                     ints = MathCalculations.stringArrayToIntArray(MathCalculations.getUserInput().split("\\s+"));
                     System.out.println("Choose an Operation\n1. Sum - sum the integers\n2. Evens - find the evens\n3. Odds - find the odds\n4. Max - find the max\n5. Min - find the min\n6. Update - enter a new list of integers\n7. Exit");

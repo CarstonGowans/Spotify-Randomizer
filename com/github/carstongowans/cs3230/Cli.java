@@ -1,10 +1,40 @@
         package com.github.carstongowans.cs3230;
-
+        import java.util.List;
         import java.util.ArrayList;
         import java.util.Scanner;
 
         class Cli {
-        public static void main(String [] args) {                                                                    // Main Driver code for Cli
+        public static void stringsCli(String[] args) {
+            List<Boolean> palindromeResult;
+            System.out.println("String Operations: Please Enter a list of strings delimited by spaces ");
+            String[] stringsList = StringOperations.stringInputToList();
+
+            Scanner input = new Scanner(System.in);
+            int operation = 0;
+
+            while(operation != 2) {                             // Valid input
+                System.out.println("Please select an Operation\n1. Palindrome Checker\n2. Back to Main Menu");
+                operation = input.nextInt();
+                switch(operation) {
+                    case 1: palindromeResult = StringOperations.palindromeCheck(stringsList);
+                       for(int i = 0; i < palindromeResult.size(); i++) {
+                           System.out.print(stringsList[i] + ": ");
+                           if(palindromeResult.get(i) == true) {
+                               System.out.println("Is a palindrome");
+                           }
+                           else {
+                               System.out.println("Is not a palindrome");
+                           }
+                       }
+                    break;
+                    case 2: Main.main(args);
+                    break;
+                    default: break;
+                }
+            }
+        }
+
+        public static void cli(String [] args) {                                                                    // Main Driver code for Cli
         //Cli cli = new Cli();
         System.out.println("Enter list of Integers. (space separated): ");
         int [] ints = MathCalculations.stringArrayToIntArray(MathCalculations.getUserInput().split("\\s+"));  // Input Information into Array from stringToIntArray() function
@@ -64,7 +94,7 @@
                     break;
                 }
                 case 7:                                                         // Function call to break out of loop
-                    operation = 7;
+                    Main.main(args);
                     break;
             }
         }

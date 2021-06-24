@@ -22,6 +22,7 @@ public class MathCalculations {
                     System.out.println("invalid integer, try again");
                 }
             }
+            Arrays.sort(integers);                              // Check to ensure array is sorted for other functions
         return integers;
     }
 
@@ -73,12 +74,62 @@ public class MathCalculations {
         }
         else {
         int min = Integer.MAX_VALUE;
-        for(int i = 1; i < intArray.length; i++) {              // Else, parse through the array to determine the min value
+        for(int i = 0; i < intArray.length; i++) {              // Else, parse through the array to determine the min value
             if(intArray[i] < min) {                    
                 min = intArray[i];
             }   
         }
         return min;
         }
+    }
+
+    public static double mean(int[] intArray) {                 // Function for calculating average
+        double mean = sum(intArray) / intArray.length;          // Σ(intArray) / Count = average
+        return mean;
+    }
+
+    public static double median(int[] intArray) {               // Function for calculating average
+        int indexRange = intArray.length;
+
+        if(indexRange % 2 == 0) {                               // The range is even, so grab the average between the two middle points
+            int divRange = indexRange / 2;
+            double medianValue = (double)(intArray[divRange] + intArray[divRange-1]) / 2;
+            return medianValue;
+        }
+        else {                                                  // The range is odd, so just grab the mid point.
+            double medianValue = intArray[Math.round(indexRange/2)];
+            return medianValue;
+        }
+    }
+
+    public static double q1(int[] intArray) {                   // Function for calculating the First Quartile
+        int index = (int) Math.floor(intArray.length/2);        // Find the index but floor it down to determine the number of values in the first quartile
+        int[] q1Array = new int[index];                         // Make a new array with the size of the first quartile
+        for(int i = 0; i < index; i++) {                        // copy values of first quartile into it's array
+            q1Array[i] = intArray[i];
+        }
+        return median(q1Array);                                 // Find the median
+    }                                                           // The BigO time and space complexities aren't that good here. Space complexity isn't constant and the time complexity is a little worse than linear.
+                                                                // I can't think of a way to make this any easier / better.
+
+    public static double q3(int[] intArray) {                   // Function for calculating the Third Quartile
+        int index = (int) Math.floor(intArray.length/2);        // Same as above, except for the boundaries is everything after the median value.
+        int[] q3Array = new int[index];
+        for(int i = 0; i < index; i++) {
+            q3Array[i] = intArray[intArray.length-index + i];
+        }
+        return median(q3Array);
+    }
+
+    public static double standardDeviation(int[] intArray) {    // Standard Deviation Function from https://www.programiz.com/java-programming/examples/standard-deviation. (Given through the assignment instructions repo).
+        double stdDeviation = 0;
+        int sum = sum(intArray);
+        double mean = mean(intArray);
+
+        for(double value: intArray) {
+            stdDeviation += Math.pow(value - mean, 2);
+        }
+
+        return Math.sqrt(stdDeviation/ intArray.length);
     }
 }

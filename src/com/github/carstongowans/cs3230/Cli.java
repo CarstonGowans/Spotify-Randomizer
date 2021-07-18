@@ -1,4 +1,5 @@
         package com.github.carstongowans.cs3230;
+
         import java.text.DecimalFormat;
         import java.util.ArrayList;
 import java.util.List;

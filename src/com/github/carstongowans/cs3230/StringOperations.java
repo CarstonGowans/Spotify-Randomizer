@@ -28,14 +28,11 @@ public class StringOperations {
             if (parsedString.compareTo(stringReversed) == 0) {         // If else statement for comparisons
                 boolean t = true;
                 pR.add(t);
-            }
-            else {
+            } else {
                 boolean f = false;
                 pR.add(f);
             }
         }
         return pR;
     }
-
-
 }

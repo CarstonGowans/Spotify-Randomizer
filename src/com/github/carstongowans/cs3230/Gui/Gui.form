@@ -7,28 +7,22 @@
     </constraints>
     <properties>
       <background color="-15461357"/>
+      <font size="20"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="f3df1" class="javax.swing.JFormattedTextField" binding="enterNumbersFormattedTextField" default-binding="true">
+      <component id="f3df1" class="javax.swing.JFormattedTextField" binding="inputValues">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
           <background color="-14079704"/>
-          <text value="Enter Numbers"/>
-        </properties>
-      </component>
-      <component id="174f4" class="javax.swing.JButton" binding="calculateButton" default-binding="true">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-14079704"/>
-          <hideActionText value="false"/>
-          <text value="Calculate"/>
+          <font size="20"/>
+          <foreground color="-8"/>
+          <selectedTextColor color="-8"/>
+          <text value=""/>
         </properties>
       </component>
       <grid id="3eb4c" layout-manager="FormLayout">
@@ -61,22 +55,13 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
+              <foreground color="-13619152"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="a88b8" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <component id="4baa6" class="javax.swing.JTextArea" binding="minTextArea" default-binding="true">
+              <component id="4baa6" class="javax.swing.JTextArea" binding="minDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -84,7 +69,19 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <caretColor color="-8"/>
+                  <font size="22"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Min:"/>
+                </properties>
+              </component>
+              <component id="b659" class="javax.swing.JButton" binding="calculateMin">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Calculate"/>
                 </properties>
               </component>
             </children>
@@ -96,22 +93,12 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="6b945" class="javax.swing.JTextArea" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <component id="93edb" class="javax.swing.JTextArea" default-binding="true">
+              <component id="93edb" class="javax.swing.JTextArea" binding="maxDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -119,7 +106,18 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <font size="22"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Max:"/>
+                </properties>
+              </component>
+              <component id="3d066" class="javax.swing.JButton" binding="calculateMax">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Calculate"/>
                 </properties>
               </component>
             </children>
@@ -131,22 +129,12 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="9c60b" class="javax.swing.JTextArea" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <component id="dbd65" class="javax.swing.JTextArea" default-binding="true">
+              <component id="dbd65" class="javax.swing.JTextArea" binding="evensDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -154,7 +142,18 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <font size="22"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Evens:"/>
+                </properties>
+              </component>
+              <component id="a3fc5" class="javax.swing.JButton" binding="calculateEvens">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Calculate"/>
                 </properties>
               </component>
             </children>
@@ -166,22 +165,20 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="25481" class="javax.swing.JTextArea" default-binding="true">
+              <component id="9b600" class="javax.swing.JButton" binding="calculateOdds">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
+                  <text value="Calculate"/>
                 </properties>
               </component>
-              <component id="48932" class="javax.swing.JTextArea" default-binding="true">
+              <component id="48932" class="javax.swing.JTextArea" binding="oddsDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -189,6 +186,9 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <font size="22"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Odds:"/>
                 </properties>
               </component>
@@ -201,22 +201,12 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="103aa" class="javax.swing.JTextArea" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <component id="cfc17" class="javax.swing.JTextArea" default-binding="true">
+              <component id="cfc17" class="javax.swing.JTextArea" binding="sumDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -224,7 +214,18 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <font size="22"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Sum:"/>
+                </properties>
+              </component>
+              <component id="6bdb9" class="javax.swing.JButton" binding="calculateSum">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Calculate"/>
                 </properties>
               </component>
             </children>
@@ -236,22 +237,12 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="388cf" class="javax.swing.JTextArea" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <component id="d4b05" class="javax.swing.JTextArea" default-binding="true">
+              <component id="d4b05" class="javax.swing.JTextArea" binding="stdDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -259,7 +250,18 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <font size="20"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Standard Deviation:"/>
+                </properties>
+              </component>
+              <component id="ca82a" class="javax.swing.JButton" binding="calculateSTD">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Calculate"/>
                 </properties>
               </component>
             </children>
@@ -271,22 +273,12 @@
               <forms/>
             </constraints>
             <properties>
+              <background color="-14079704"/>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="fb7f4" class="javax.swing.JTextArea" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <background color="-14079704"/>
-                  <text value=" "/>
-                </properties>
-              </component>
-              <component id="88c70" class="javax.swing.JTextArea" default-binding="true">
+              <component id="88c70" class="javax.swing.JTextArea" binding="fnsDisplay">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
@@ -294,7 +286,18 @@
                 </constraints>
                 <properties>
                   <background color="-14079704"/>
+                  <font size="20"/>
+                  <foreground color="-8"/>
+                  <selectedTextColor color="-8"/>
                   <text value="Five Number Summary:"/>
+                </properties>
+              </component>
+              <component id="c577e" class="javax.swing.JButton" binding="calculateFNS">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Calculate"/>
                 </properties>
               </component>
             </children>

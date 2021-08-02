@@ -1,6 +1,6 @@
-package src.com.github.carstongowans.cs3230.Gui;
+package com.github.carstongowans.cs3230.Gui;
 
-import src.com.github.carstongowans.cs3230.Helper;
+import com.github.carstongowans.cs3230.Helper;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 
 public class Gui {
     private JPanel panel1;
+    private JTabbedPane tabs;
     private JFormattedTextField inputValues;
     private JTextArea minDisplay;
     private JButton calculateMax;
@@ -24,6 +25,15 @@ public class Gui {
     private JTextArea sumDisplay;
     private JTextArea stdDisplay;
     private JTextArea fnsDisplay;
+    private JPanel NumberPanel;
+    private JPanel Spotify;
+    private JFormattedTextField SongSearchBar;
+    private JButton SearchButton;
+    private JPanel Song2Panel;
+    private JPanel Song3Panel;
+    private JTextArea Album1Text;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
 
     public Gui() {
         calculateMin.addMouseListener(new MouseAdapter() {

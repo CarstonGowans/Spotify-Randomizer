@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class Gui {
     private JPanel panel1;
-    private JTabbedPane tabs;
     private JFormattedTextField inputValues;
     private JTextArea minDisplay;
     private JButton calculateMax;
@@ -28,8 +27,6 @@ public class Gui {
     private JTextArea sumDisplay;
     private JTextArea stdDisplay;
     private JTextArea fnsDisplay;
-    private JPanel NumberPanel;
-    private JPanel Spotify;
     private JFormattedTextField InputSongField;
     private JButton SearchButton;
     private JTextArea Album1Text;
@@ -118,7 +115,7 @@ public class Gui {
                 } catch (IndexOutOfBoundsException f) {
                     InputSongField.setText("Invalid Song / Album");
                 } catch (Exception g) {
-                    InputSongField.setText("Invalid Song / Album");
+                    InputSongField.setText("Invalid Entry");
                 }
 
             }
@@ -129,7 +126,6 @@ public class Gui {
                 super.mousePressed(e);
 
                 String inputToken = InputTokenField.getText();
-                String inputSong = " ";
 
                 try {
                     String randomSong = SpotifyHelper.getRandomSong(inputToken);
@@ -152,7 +148,6 @@ public class Gui {
         while(!success) {
             Root songRoot = SpotifyHelper.getSong(songName);                                                                             // Create root class object from song name
             String artistID = songRoot.tracks.items.get(0).artists.get(0).id;                                                           // Grabs the Artist ID of the searched Song
-            String backupArtistID = songRoot.tracks.items.get(0).artists.get(0).name;
 
             Root artistRoot = SpotifyHelper.getArtist(artistID);                                                                        // Creates a root class object from artistID
 
@@ -184,8 +179,8 @@ public class Gui {
 
         String track1ImageUrl = trackRoot1.tracks.items.get(randomNumber1).album.images.get(0).url;                                 // Finds the newly searched song's Image Urls and Names
         String track1Name = "Song: " + trackRoot1.tracks.items.get(randomNumber1).name;
-        String track2ImageUrl = trackRoot2.tracks.items.get(randomNumber1).album.images.get(0).url;
-        String track2Name = "Song: " + trackRoot2.tracks.items.get(randomNumber1).name;
+        String track2ImageUrl = trackRoot2.tracks.items.get(randomNumber2).album.images.get(0).url;
+        String track2Name = "Song: " + trackRoot2.tracks.items.get(randomNumber2).name;
 
         Artwork1.setIcon(SpotifyHelper.urlToImageResized(album1Url));                                                               // Sets Information gathered from above calls to GUI
         Album1Text.setText(album1Name);

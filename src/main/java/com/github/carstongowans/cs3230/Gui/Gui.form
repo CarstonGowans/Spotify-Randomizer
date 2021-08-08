@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="785" height="556"/>
+      <xy x="20" y="20" width="865" height="556"/>
     </constraints>
     <properties>
       <background color="-15461357"/>
@@ -17,16 +17,23 @@
             <preferred-size width="200" height="200"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-15461357"/>
+          <foreground color="-8"/>
+          <inheritsPopupMenu value="true"/>
+          <opaque value="false"/>
+          <visible value="true"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="805ca" binding="NumberPanel" layout-manager="GridBagLayout">
             <constraints>
-              <tabbedpane title="Untitled"/>
+              <tabbedpane title="Math"/>
             </constraints>
             <properties>
               <background color="-15461357"/>
               <font size="20"/>
+              <foreground color="-8"/>
             </properties>
             <border type="none"/>
             <children>
@@ -65,7 +72,8 @@
                   <gridbag weightx="1.0" weighty="1.0"/>
                 </constraints>
                 <properties>
-                  <background color="-13619152"/>
+                  <background color="-15461357"/>
+                  <foreground color="-15461357"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -102,6 +110,9 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -138,6 +149,9 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -174,6 +188,9 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -196,6 +213,9 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -246,6 +266,9 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -282,6 +305,9 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -318,6 +344,10 @@
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
+                          <autoscrolls value="true"/>
+                          <background color="-14606048"/>
+                          <borderPainted value="false"/>
+                          <foreground color="-8"/>
                           <text value="Calculate"/>
                         </properties>
                       </component>
@@ -327,12 +357,14 @@
               </grid>
             </children>
           </grid>
-          <grid id="bd57a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="bd57a" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Untitled"/>
+              <tabbedpane title="Spotify"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-15461357"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="a5877" binding="Spotify" layout-manager="FormLayout">
@@ -342,15 +374,20 @@
                 <colspec value="fill:d:grow"/>
                 <colspec value="left:4dlu:noGrow"/>
                 <colspec value="fill:max(d;4px):noGrow"/>
+                <colspec value="left:4dlu:noGrow"/>
+                <colspec value="fill:max(d;4px):noGrow"/>
+                <colspec value="left:4dlu:noGrow"/>
+                <colspec value="fill:max(d;4px):noGrow"/>
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="1" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <background color="-13619152"/>
+                  <foreground color="-15461357"/>
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="c2411" class="javax.swing.JFormattedTextField" binding="SongSearchBar">
+                  <component id="c2411" class="javax.swing.JFormattedTextField" binding="InputSongField">
                     <constraints>
                       <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
@@ -359,22 +396,15 @@
                     </constraints>
                     <properties>
                       <background color="-13619152"/>
+                      <foreground color="-8"/>
+                      <selectedTextColor color="-8"/>
                       <text value=""/>
                     </properties>
                   </component>
-                  <component id="be176" class="javax.swing.JButton" binding="SearchButton">
-                    <constraints>
-                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                      <forms/>
-                    </constraints>
-                    <properties>
-                      <text value="Button"/>
-                    </properties>
-                  </component>
-                  <grid id="2f4e7" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="2f4e7" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
-                      <grid row="0" column="0" row-span="2" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="2" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                       <forms/>
                     </constraints>
                     <properties>
@@ -382,28 +412,6 @@
                     </properties>
                     <border type="none"/>
                     <children>
-                      <grid id="dc6a0" binding="Song3Panel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                        <margin top="0" left="0" bottom="0" right="0"/>
-                        <constraints>
-                          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-14606048"/>
-                        </properties>
-                        <border type="none"/>
-                        <children/>
-                      </grid>
-                      <grid id="1c134" binding="Song2Panel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                        <margin top="0" left="0" bottom="0" right="0"/>
-                        <constraints>
-                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-14606048"/>
-                        </properties>
-                        <border type="none"/>
-                        <children/>
-                      </grid>
                       <grid id="c778d" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                         <margin top="0" left="0" bottom="0" right="0"/>
                         <constraints>
@@ -416,7 +424,7 @@
                         <children>
                           <grid id="a1bee" layout-manager="BorderLayout" hgap="0" vgap="0">
                             <constraints>
-                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <background color="-14606048"/>
@@ -427,6 +435,18 @@
                                 <constraints border-constraint="South"/>
                                 <properties>
                                   <background color="-13619152"/>
+                                  <font size="20"/>
+                                  <foreground color="-8"/>
+                                  <lineWrap value="false"/>
+                                </properties>
+                              </component>
+                              <component id="7a121" class="javax.swing.JLabel" binding="Artwork1">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <horizontalAlignment value="0"/>
+                                  <horizontalTextPosition value="0"/>
+                                  <iconTextGap value="0"/>
+                                  <text value=""/>
                                 </properties>
                               </component>
                             </children>
@@ -445,53 +465,38 @@
                         <children>
                           <grid id="1f63c" layout-manager="BorderLayout" hgap="0" vgap="0">
                             <constraints>
-                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
                               <background color="-14606048"/>
                             </properties>
                             <border type="none"/>
                             <children>
-                              <component id="9da59" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+                              <component id="9da59" class="javax.swing.JTextArea" binding="Album2Text">
                                 <constraints border-constraint="South"/>
                                 <properties>
                                   <background color="-13619152"/>
+                                  <font size="20"/>
+                                  <foreground color="-8"/>
+                                  <lineWrap value="false"/>
+                                  <wrapStyleWord value="false"/>
+                                </properties>
+                              </component>
+                              <component id="2b643" class="javax.swing.JLabel" binding="Artwork2">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <autoscrolls value="false"/>
+                                  <horizontalAlignment value="0"/>
+                                  <horizontalTextPosition value="0"/>
+                                  <iconTextGap value="0"/>
+                                  <text value=""/>
                                 </properties>
                               </component>
                             </children>
                           </grid>
                         </children>
                       </grid>
-                      <grid id="1ccc8" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                        <margin top="0" left="0" bottom="0" right="0"/>
-                        <constraints>
-                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <background color="-14606048"/>
-                        </properties>
-                        <border type="none"/>
-                        <children>
-                          <grid id="75fab" layout-manager="BorderLayout" hgap="0" vgap="0">
-                            <constraints>
-                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                            </constraints>
-                            <properties>
-                              <background color="-14606048"/>
-                            </properties>
-                            <border type="none"/>
-                            <children>
-                              <component id="6d25c" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
-                                <constraints border-constraint="South"/>
-                                <properties>
-                                  <background color="-13619152"/>
-                                </properties>
-                              </component>
-                            </children>
-                          </grid>
-                        </children>
-                      </grid>
-                      <grid id="83ed0" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                      <grid id="a37e0" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                         <margin top="0" left="0" bottom="0" right="0"/>
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -500,12 +505,121 @@
                           <background color="-14606048"/>
                         </properties>
                         <border type="none"/>
-                        <children/>
+                        <children>
+                          <grid id="9d6fb" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-14606048"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="5b450" class="javax.swing.JTextArea" binding="Song1Text">
+                                <constraints border-constraint="South"/>
+                                <properties>
+                                  <background color="-13619152"/>
+                                  <font size="20"/>
+                                  <foreground color="-8"/>
+                                  <lineWrap value="false"/>
+                                </properties>
+                              </component>
+                              <component id="dacde" class="javax.swing.JLabel" binding="SongArtwork1">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <horizontalAlignment value="0"/>
+                                  <horizontalTextPosition value="0"/>
+                                  <iconTextGap value="0"/>
+                                  <text value=""/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                      <grid id="278be" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                        <margin top="0" left="0" bottom="0" right="0"/>
+                        <constraints>
+                          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <background color="-14606048"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <grid id="f924a" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints>
+                              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                            </constraints>
+                            <properties>
+                              <background color="-14606048"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="e685a" class="javax.swing.JTextArea" binding="Song2Text">
+                                <constraints border-constraint="South"/>
+                                <properties>
+                                  <background color="-13619152"/>
+                                  <font size="20"/>
+                                  <foreground color="-8"/>
+                                  <lineWrap value="false"/>
+                                  <text value=""/>
+                                </properties>
+                              </component>
+                              <component id="b412" class="javax.swing.JLabel" binding="SongArtwork2">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <horizontalAlignment value="0"/>
+                                  <horizontalTextPosition value="0"/>
+                                  <iconTextGap value="0"/>
+                                  <text value=""/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
                       </grid>
                     </children>
                   </grid>
+                  <component id="ae0ec" class="javax.swing.JButton" binding="Random">
+                    <constraints>
+                      <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <forms/>
+                    </constraints>
+                    <properties>
+                      <background color="-14079704"/>
+                      <borderPainted value="false"/>
+                      <enabled value="true"/>
+                      <foreground color="-8"/>
+                      <text value="Random Serach"/>
+                    </properties>
+                  </component>
+                  <component id="83fd3" class="javax.swing.JButton" binding="SearchButton">
+                    <constraints>
+                      <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <forms/>
+                    </constraints>
+                    <properties>
+                      <background color="-14079704"/>
+                      <borderPainted value="false"/>
+                      <foreground color="-8"/>
+                      <text value="Generate"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
+              <component id="fed90" class="javax.swing.JFormattedTextField" binding="InputTokenField">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <background color="-14079704"/>
+                  <foreground color="-8"/>
+                  <text value=""/>
+                </properties>
+              </component>
             </children>
           </grid>
         </children>

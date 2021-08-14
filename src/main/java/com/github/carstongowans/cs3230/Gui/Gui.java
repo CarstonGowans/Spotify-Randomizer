@@ -1,7 +1,7 @@
 package com.github.carstongowans.cs3230.Gui;
 
 import com.github.carstongowans.cs3230.Helper;
-import com.github.carstongowans.cs3230.SpotifyHelper;
+import com.github.carstongowans.cs3230.Spotify;
 import com.github.carstongowans.cs3230.models.Root;
 
 import javax.swing.*;
@@ -39,6 +39,7 @@ public class Gui {
     private JTextArea Song2Text;
     private JLabel SongArtwork2;
     private JButton Random;
+    private JTabbedPane Tabs;
 
     public Gui() {
         calculateMin.addMouseListener(new MouseAdapter() {
@@ -107,10 +108,10 @@ public class Gui {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                     String inputToken = InputTokenField.getText();
-                    String inputSong = "\"" + InputSongField.getText() + "\"";
+                    String inputSong = "\"" + InputSongField.getText() + "\"";                                                      // Adds Search Query limiter to exact names
                 try {
                     setTexts(inputSong, inputToken);
-                } catch (IOException ioException) {
+                } catch (IOException ioException) {                                                                                 // Exception Handling
                     ioException.printStackTrace();
                 } catch (IndexOutOfBoundsException f) {
                     InputSongField.setText("Invalid Song / Album");
@@ -124,85 +125,84 @@ public class Gui {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
+                boolean success = false;
 
                 String inputToken = InputTokenField.getText();
-
-                try {
-                    String randomSong = SpotifyHelper.getRandomSong(inputToken);
-                    setTexts(randomSong, inputToken);
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
-                    InputSongField.setText("Invalid Song / Album Name");
+                while(!success) {                                                                                                   // If a random genre or song aren't generated correctly, loop until both are
+                    try {
+                        String randomSong = Spotify.getRandomSong(inputToken);                                                      // Call randomSong()
+                        setTexts(randomSong, inputToken);                                                                           // Update texts on GUI with setTexts()
+                        success = true;
+                    } catch (IOException ioException) {                                                                             // Exception Handling
+                        ioException.printStackTrace();
+                    } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
+                    }
                 }
             }
         });
     }
 
     public void setTexts(String songName, String inputToken) throws IOException {
-        SpotifyHelper.setToken(inputToken);
+        Spotify.setToken(inputToken);
         boolean success = false;
         String artistGenre1 = " ";
         String artistGenre2 = " ";
 
-        while(!success) {
-            Root songRoot = SpotifyHelper.getSong(songName);                                                                             // Create root class object from song name
-            String artistID = songRoot.tracks.items.get(0).artists.get(0).id;                                                           // Grabs the Artist ID of the searched Song
+        while(!success) {                                                                                                         // If a genre / song aren't generated correctly, loop until both are
+            Root songRoot = Spotify.getSong(songName);                                                                            // Create root class object from song name
+            String artistID = songRoot.tracks.items.get(0).artists.get(0).id;                                                     // Grabs the Artist ID of the searched Song
 
-            Root artistRoot = SpotifyHelper.getArtist(artistID);                                                                        // Creates a root class object from artistID
+            Root artistRoot = Spotify.getArtist(artistID);                                                                        // Creates a root class object from artistID
 
             try {
-                artistGenre1 = artistRoot.genres.get(0);                                                                         // Grabs the first and a random Genres from the artist of the searched song
+                artistGenre1 = artistRoot.genres.get(0);                                                                          // Grabs the first and last Genre from the artist of the searched song
                 artistGenre2 = artistRoot.genres.get(artistRoot.genres.size()-1);
                 success = true;
             } catch (IndexOutOfBoundsException e) {
-                songName = SpotifyHelper.getRandomSong(inputToken);
+                songName = Spotify.getRandomSong(inputToken);
             } catch (Exception e) {
-                songName = SpotifyHelper.getRandomSong(inputToken);
+                songName = Spotify.getRandomSong(inputToken);
             }
         }
 
+        Root trackRoot1 = Spotify.getTracksByGenre(artistGenre1);                                                                 // Grabs the two newly searched songs and albums and creates root class objects
+        Root trackRoot2 = Spotify.getTracksByGenre(artistGenre2);
+        Root albumRoot1 = Spotify.getAlbumByGenre(artistGenre1);
+        Root albumRoot2 = Spotify.getAlbumByGenre(artistGenre2);
 
-
-        Root trackRoot1 = SpotifyHelper.getTracksByGenre(artistGenre1);                                                             // Grabs the two newly searched songs and albums and creates root class objects
-        Root trackRoot2 = SpotifyHelper.getTracksByGenre(artistGenre2);
-        Root albumRoot1 = SpotifyHelper.getAlbumByGenre(artistGenre1);
-        Root albumRoot2 = SpotifyHelper.getAlbumByGenre(artistGenre2);
-
-        String album1Url = albumRoot1.albums.items.get(0).images.get(0).url;                                                        // Finds the newly searched album's Image urls and Names
+        String album1Url = albumRoot1.albums.items.get(0).images.get(0).url;                                                      // Finds the newly searched album's Image urls and Names
         String album2Url = albumRoot2.albums.items.get(0).images.get(0).url;
         String album1Name = "Album: " + albumRoot1.albums.items.get(0).name;
         String album2Name = "Album: " + albumRoot2.albums.items.get(0).name;
 
-        int randomNumber1 = SpotifyHelper.randomNumber(trackRoot1.tracks.items.size()-1);                                       // Random number generator for random songs
-        int randomNumber2 = SpotifyHelper.randomNumber(trackRoot2.tracks.items.size()-1);
+        int randomNumber1 = Spotify.randomNumber(trackRoot1.tracks.items.size()-1);                                         // Random number generator for random songs
+        int randomNumber2 = Spotify.randomNumber(trackRoot2.tracks.items.size()-1);
 
-        String track1ImageUrl = trackRoot1.tracks.items.get(randomNumber1).album.images.get(0).url;                                 // Finds the newly searched song's Image Urls and Names
+        String track1ImageUrl = trackRoot1.tracks.items.get(randomNumber1).album.images.get(0).url;                              // Finds the newly searched song's Image Urls and Names
         String track1Name = "Song: " + trackRoot1.tracks.items.get(randomNumber1).name;
         String track2ImageUrl = trackRoot2.tracks.items.get(randomNumber2).album.images.get(0).url;
         String track2Name = "Song: " + trackRoot2.tracks.items.get(randomNumber2).name;
 
-        Artwork1.setIcon(SpotifyHelper.urlToImageResized(album1Url));                                                               // Sets Information gathered from above calls to GUI
+        Artwork1.setIcon(Spotify.urlToImageResized(album1Url));                                                                  // Sets Information gathered from above calls to GUI
         Album1Text.setText(album1Name);
 
-        Artwork2.setIcon(SpotifyHelper.urlToImageResized(album2Url));
+        Artwork2.setIcon(Spotify.urlToImageResized(album2Url));
         Album2Text.setText(album2Name);
 
-        SongArtwork1.setIcon(SpotifyHelper.urlToImageResized(track1ImageUrl));
+        SongArtwork1.setIcon(Spotify.urlToImageResized(track1ImageUrl));
         Song1Text.setText(track1Name);
 
-        SongArtwork2.setIcon(SpotifyHelper.urlToImageResized(track2ImageUrl));
+        SongArtwork2.setIcon(Spotify.urlToImageResized(track2ImageUrl));
         Song2Text.setText(track2Name);
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Cs3230 GUI");
+        JFrame frame = new JFrame("Cs3230 GUI");                                                                            // Generate new Jframe Object with default size and values
         frame.setContentPane(new Gui().panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(1200, 900));
+        frame.setPreferredSize(new Dimension(1500, 1000));
         frame.pack();
         frame.setVisible(true);
-
     }
 }
 

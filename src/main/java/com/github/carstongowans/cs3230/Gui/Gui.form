@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <tabbedpane id="6a62c" binding="tabs">
+      <tabbedpane id="6a62c" binding="Tabs">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="200"/>
@@ -26,7 +26,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <grid id="805ca" binding="NumberPanel" layout-manager="GridBagLayout">
+          <grid id="805ca" layout-manager="GridBagLayout">
             <constraints>
               <tabbedpane title="Math"/>
             </constraints>
@@ -367,7 +367,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="a5877" binding="Spotify" layout-manager="FormLayout">
+              <grid id="a5877" layout-manager="FormLayout">
                 <rowspec value="center:d:grow"/>
                 <rowspec value="top:4dlu:noGrow"/>
                 <rowspec value="center:max(d;4px):noGrow"/>

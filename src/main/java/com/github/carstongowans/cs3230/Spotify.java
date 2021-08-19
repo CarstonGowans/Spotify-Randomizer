@@ -2,7 +2,7 @@ package com.github.carstongowans.cs3230;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.carstongowans.cs3230.models.Root;
+import com.github.carstongowans.cs3230.Models.Root;
 import net.coobird.thumbnailator.Thumbnails;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

@@ -1,4 +1,4 @@
-package com.github.carstongowans.cs3230.models;
+package com.github.carstongowans.cs3230.Models;
 
 import java.util.List;
 import java.util.Random;

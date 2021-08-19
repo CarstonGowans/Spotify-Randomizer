@@ -2,7 +2,7 @@ package com.github.carstongowans.cs3230.Gui;
 
 import com.github.carstongowans.cs3230.Helper;
 import com.github.carstongowans.cs3230.Spotify;
-import com.github.carstongowans.cs3230.models.Root;
+import com.github.carstongowans.cs3230.Models.Root;
 
 import javax.swing.*;
 import java.awt.*;
